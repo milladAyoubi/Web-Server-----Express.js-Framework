@@ -12,11 +12,12 @@ const app = express()
 
 
 
-app.set('view engine','handlebars')
+app.set('view engine', 'hbs')
 app.use(express.static(publicDir))
 
-
-
+app.get('',(req,res) => {
+    res.render('index')
+})
 app.get('/help', (req,res) => {
     res.send({
         name: 'Ashoka',
@@ -25,19 +26,6 @@ app.get('/help', (req,res) => {
     })
 })
 
-app.get('/about', (req,res) => {
-    res.send([{
-        title: "Node"
-    },
-    {
-        title: "Clone"
-    }
-])
-})
-
-app.get('/weather', (req,res) => {
-    res.send('<h1>This is the Weather Tab</h1>')
-})
 
 app.listen(3000, () => {
     console.log('Server is up on port 3000')
