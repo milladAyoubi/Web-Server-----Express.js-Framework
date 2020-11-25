@@ -10,6 +10,9 @@ console.log(path.join(__dirname, '../public'))
 const publicDir = path.join(__dirname,'../public')
 const app = express()
 
+
+
+app.set('view engine','handlebars')
 app.use(express.static(publicDir))
 
 
