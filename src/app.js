@@ -15,9 +15,14 @@ const app = express()
 app.set('view engine', 'hbs')
 app.use(express.static(publicDir))
 
+
+
+
+
 app.get('',(req,res) => {
     res.render('index')
 })
+
 app.get('/help', (req,res) => {
     res.send({
         name: 'Ashoka',
