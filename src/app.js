@@ -16,18 +16,20 @@ app.set('view engine', 'hbs')
 app.use(express.static(publicDir))
 
 
-
-
-
 app.get('',(req,res) => {
-    res.render('index')
+    res.render('index', {
+        title: 'Weather App W/ Node.js!',
+        subTitle: 'Millad Ayoubi',
+        btnName: 'Enter Information'
+
+    })
 })
 
-app.get('/help', (req,res) => {
-    res.send({
-        name: 'Ashoka',
-        Age: 34,
-        
+app.get('/about', (req,res) => {
+    res.render('about', {
+        title: 'Welcome to the About page!',
+        subTitle: 'A demonstation of Handlebars in Express',
+        btnName: 'I can make this button say anything!'
     })
 })
 
