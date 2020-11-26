@@ -7,12 +7,16 @@ const path = require('path')
 console.log(__dirname)
 console.log(path.join(__dirname, '../public'))
 
+//Paths
+const hbsPath = path.join(__dirname, '../handlebars')
 const publicDir = path.join(__dirname,'../public')
+
 const app = express()
 
-
-
+//Pointers to Views
 app.set('view engine', 'hbs')
+app.set('views', hbsPath)
+
 app.use(express.static(publicDir))
 
 
