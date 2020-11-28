@@ -1,3 +1,28 @@
+.topnav {
+  margin-bottom: 20px;
+  position: relative;
+  background-color: #e0dfdf;
+  border-radius: 26px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.topnav a {
+  color: #393535;
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 24px;
+  padding: 5%;
+  transition: 0.4s;
+  font-family: "Segoe UI Light";
+}
+
+.topnav a:hover {
+  color: #0275d8;
+  font-size: 25px;
+  text-decoration: none;
+  transition: 0.4s;
+}
 .jumbotron {
   color: rebeccapurple;
   text-align: center;
@@ -13,4 +38,17 @@
   background-color: transparent;
   color: #0275d8;
   transition: 0.4s;
+}
+
+.Info {
+  text-align: right;
+  font-family: cabin;
+  font-size: 22px;
+  background-color: #1a1a1a;
+  color: white;
+  padding-top: 60px;
+}
+
+.Service {
+  text-align: center;
 }

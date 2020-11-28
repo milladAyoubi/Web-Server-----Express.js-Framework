@@ -1,6 +1,7 @@
 
 const express = require('express')
 const path = require('path')
+const hbs = require('hbs')
 
 
 
@@ -8,7 +9,8 @@ console.log(__dirname)
 console.log(path.join(__dirname, '../public'))
 
 //Paths
-const hbsPath = path.join(__dirname, '../handlebars')
+const partialPath = path.join(__dirname, '../handlebars/partials')
+const hbsPath = path.join(__dirname, '../handlebars/views')
 const publicDir = path.join(__dirname,'../public')
 
 const app = express()
@@ -16,6 +18,7 @@ const app = express()
 //Pointers to Views
 app.set('view engine', 'hbs')
 app.set('views', hbsPath)
+hbs.registerPartials(partialPath)
 
 app.use(express.static(publicDir))
 
