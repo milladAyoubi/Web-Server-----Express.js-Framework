@@ -40,7 +40,16 @@ app.get('/about', (req,res) => {
     })
 })
 
+app.get('/about/*',(req,res) => {
 
+    res.send('About Article Not Found')
+
+
+})
+
+app.get('*',(req,res) => {
+res.send('404 Page Not Found')
+})
 app.listen(3000, () => {
     console.log('Server is up on port 3000')
 })
