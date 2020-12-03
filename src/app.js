@@ -32,6 +32,12 @@ app.get('',(req,res) => {
     })
 })
 
+app.get('/products', (req,res) => {
+    res.send({
+        products: []
+    })
+})
+
 app.get('/about', (req,res) => {
     res.render('about', {
         title: 'Welcome to the About page!',
@@ -46,6 +52,7 @@ app.get('/about/*',(req,res) => {
 
 
 })
+
 
 app.get('*',(req,res) => {
 res.send('404 Page Not Found')
