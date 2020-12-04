@@ -1,8 +1,9 @@
-
+const request = require("request");
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
-
+const geoCode = require('./utils/geoCode')
+const forecast = require('./utils/forecast')
 
 
 console.log(__dirname)
@@ -33,18 +34,36 @@ app.get('',(req,res) => {
 })
 
 app.get('/weather', (req,res) => {
-    if(!req.query.address) {
+    if(!req.query.address) { 
         return console.log('No Address Entered!')
     }
-    res.send({
-        address: req.query.address,
-        products: []
+  
         
+
+
+
+geoCode(req.query.address, (error, {latitude, longitude, location,country}) => {
+    if(error) {
+        return res.send({error})
+    }
+
+    forecast(latitude, longitude, (error, forecastData) => {
+        if(error) {
+            return res.send({error})
+        }
+        res.send({
+            forcast: forecastData,
+            location, 
+            address: req.query.address,
+            latitude,
+            longitude,
+            country
+        })
+    
     })
 })
 
-
-
+})
 app.get('/about', (req,res) => {
     res.render('about', {
         title: 'Welcome to the About page!',
