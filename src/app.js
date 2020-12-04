@@ -32,11 +32,18 @@ app.get('',(req,res) => {
     })
 })
 
-app.get('/products', (req,res) => {
+app.get('/weather', (req,res) => {
+    if(!req.query.address) {
+        return console.log('No Address Entered!')
+    }
     res.send({
+        address: req.query.address,
         products: []
+        
     })
 })
+
+
 
 app.get('/about', (req,res) => {
     res.render('about', {
