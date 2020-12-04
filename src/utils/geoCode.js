@@ -20,7 +20,7 @@ const geoCode = (address,callback) => {
           latitude: body.features[0].center[0],
           longitude: body.features[0].center[1],
           location: body.features[0].place_name,
-          country: body.features[0].context[1].text
+          country: body.features[0].context[1].text 
         
   
       })

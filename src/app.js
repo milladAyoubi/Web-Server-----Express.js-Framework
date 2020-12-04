@@ -34,6 +34,7 @@ app.get('',(req,res) => {
 })
 
 app.get('/weather', (req,res) => {
+  
     if(!req.query.address) { 
         return console.log('No Address Entered!')
     }
