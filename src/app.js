@@ -43,7 +43,7 @@ app.get('/weather', (req,res) => {
 
 
 
-geoCode(req.query.address, (error, {latitude, longitude, location,country}) => {
+geoCode(req.query.address, (error, {latitude, longitude, location,country} = {}) => {
     if(error) {
         return res.send({error})
     }
@@ -84,6 +84,9 @@ app.get('/about/*',(req,res) => {
 app.get('*',(req,res) => {
 res.send('404 Page Not Found')
 })
+
+
+
 app.listen(3000, () => {
     console.log('Server is up on port 3000')
 })
