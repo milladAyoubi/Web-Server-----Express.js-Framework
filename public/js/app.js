@@ -21,14 +21,16 @@ btn.addEventListener('click', (e) =>{
        locationTitle.textContent = slocation.charAt(0).toUpperCase() + slocation.substring(1)
        view.textContent = 'Loading!'
        view2.textContent = 'Loading!'
+       view3.textContent = 'Loading!'
 
 fetch('http://localhost:3000/weather?address=' + slocation).then((response) => { 
     response.json().then((data) => {
         if(data.error) 
             console.log(data.error)
         else 
-            view.textContent = data.location
+            view.textContent = data.address
             view2.textContent = data.forcast
+            view3.textContent = data.country
     })
    
 })
