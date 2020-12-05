@@ -1,7 +1,7 @@
 .topnav {
   margin-bottom: 20px;
   position: relative;
-  background-color: #e0dfdf;
+  background-color: rgba(230, 230, 230, 0.28);
   border-radius: 26px;
   overflow: hidden;
   text-align: center;
@@ -30,21 +30,29 @@
   text-align: center;
 }
 
-.jumbotron p a {
-  border-radius: 30px;
-  padding: 10px 20px 10px 20px;
-  transition: 0.4s;
-}
-
-.jumbotron p a:hover {
-  background-color: transparent;
-  color: #0275d8;
-  transition: 0.4s;
-}
-
 .titlePage {
   position: relative;
   top: 100px;
+}
+
+.formInput {
+  width: 400px;
+  padding: 10px;
+  border-radius: 30px;
+  border: none;
+
+  margin: auto;
+}
+
+.btn {
+  border-radius: 30px;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: #0275d8;
+  transition: 0.4s;
 }
 
 .Info {

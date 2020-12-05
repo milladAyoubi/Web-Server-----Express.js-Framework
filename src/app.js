@@ -28,7 +28,7 @@ app.get('',(req,res) => {
     res.render('index', {
         title: 'Weather App W/ Node.js!',
         subTitle: 'Millad Ayoubi',
-        btnName: 'Enter Information'
+        btnName: 'Enter Location'
 
     })
 })
@@ -69,7 +69,7 @@ app.get('/about', (req,res) => {
     res.render('about', {
         title: 'Welcome to the About page!',
         subTitle: 'A demonstation of Handlebars in Express',
-        btnName: 'I can make this button say anything!'
+        btnName: 'Enter Location'
     })
 })
 

@@ -1,10 +1,10 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
         <div class="topnav ">
-            <a href="#home">Home</a>
-            <a href="#news">Products</a>
-            <a href="#search">Specs</a>
-            <a href="#about">Build Now</a>
+            <a href="http://localhost:3000/">Home</a>
+            <a href="http://localhost:3000/about">About</a>
+            <a href="#search">Tech Used</a>
+            <a href="#contact">Contact</a>
 
         </div>
         <div class='titlePage'>
@@ -12,10 +12,23 @@
             <h1 class="display-3">{{title}}</h1>
             <p class="lead">{{subTitle}}</p>
             <hr class="my-2">
-            <p>More info</p>
-            <p class="lead">
-                <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">{{btnName}}</a>
-            </p>
+
+
+            <form>
+
+                <div class="form-group">
+
+                    <input type="text" class="formInput" id="weatherInput" placeholder="Enter Location Like New York!">
+
+                </div>
+
+
+            </form>
+
+
+
+            <a type="submit" class="btn btn-primary btn-lg" href="#" role="button">{{btnName}}</a>
+
         </div>
     </div>
 </div>
