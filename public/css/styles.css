@@ -25,7 +25,7 @@
 .jumbotron {
   background-image: url("https://i.pinimg.com/originals/04/ef/5e/04ef5e1743f2123165f573616c533885.jpg");
   background-size: cover;
-  height: 60vh;
+  height: 66vh;
   color: rebeccapurple;
   text-align: center;
 }
@@ -45,6 +45,7 @@
 }
 
 .btn {
+  font-size: 12px;
   border-radius: 30px;
   transition: 0.4s;
 }
@@ -64,6 +65,19 @@
   padding-top: 60px;
 }
 
+.titleHead {
+  text-align: center;
+  margin-bottom: 3%;
+  color: rgb(61, 44, 251);
+}
+
 .Service {
   text-align: center;
+  width: 90%;
+  margin: auto;
+  color: rebeccapurple;
+
+  background-color: rgba(230, 230, 230, 0.28);
+  border: 1px solid rgb(191, 191, 191);
+  border-radius: 30px;
 }

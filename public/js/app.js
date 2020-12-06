@@ -10,15 +10,18 @@ const search = document.querySelector('input')
 
 
 const view = document.querySelector('#view1')
-const locationTitle = document.querySelector('#locationTitle')
+const locationTitle = document.querySelector('.titleHead')
 
 btn.addEventListener('click', (e) =>{
     e.preventDefault()
     if(search.value != '') {
     const slocation = search.value
-    console.log(slocation)
-        
-       locationTitle.textContent = slocation.charAt(0).toUpperCase() + slocation.substring(1)
+
+    const displaylocation = slocation.charAt(0).toUpperCase() + slocation.substring(1)
+    console.log(displaylocation)
+    locationTitle.firstElementChild.textContent = displaylocation
+    locationTitle.children[1].attributes[0].nodeValue = 'https://img.icons8.com/color/48/000000/skyscrapers.png'
+    
        view.textContent = 'Loading!'
        view2.textContent = 'Loading!'
        view3.textContent = 'Loading!'
