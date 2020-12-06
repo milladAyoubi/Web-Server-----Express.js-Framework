@@ -31,7 +31,7 @@ fetch('http://localhost:3000/weather?address=' + slocation).then((response) => {
         if(data.error) 
             console.log(data.error)
         else 
-            view.textContent = data.address
+            view.textContent = displaylocation
             view2.textContent = data.forcast
             view3.textContent = data.country
     })
