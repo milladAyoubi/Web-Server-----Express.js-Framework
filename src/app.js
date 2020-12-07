@@ -15,6 +15,7 @@ const hbsPath = path.join(__dirname, '../handlebars/views')
 const publicDir = path.join(__dirname,'../public')
 
 const app = express()
+const port = process.env.PORT || 3000 
 
 //Pointers to Views
 app.set('view engine', 'hbs')
@@ -87,7 +88,7 @@ res.send('404 Page Not Found')
 
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up on port 3000')
 })
 
