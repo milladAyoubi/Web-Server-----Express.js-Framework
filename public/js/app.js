@@ -19,8 +19,8 @@ btn.addEventListener('click', (e) =>{
 
     const displaylocation = slocation.charAt(0).toUpperCase() + slocation.substring(1)
     console.log(displaylocation)
-    locationTitle.firstElementChild.textContent = displaylocation
-    locationTitle.children[1].attributes[0].nodeValue = 'https://img.icons8.com/color/48/000000/skyscrapers.png'
+ 
+    
     
        view.textContent = 'Loading!'
        view2.textContent = 'Loading!'
@@ -34,6 +34,7 @@ fetch('/weather?address=' + slocation).then((response) => {
             view.textContent = displaylocation
             view2.textContent = data.forcast
             view3.textContent = data.country
+            locationTitle.firstElementChild.textContent = "Time at " + displaylocation + " is " + data.LocationTime
     })
    
 })
