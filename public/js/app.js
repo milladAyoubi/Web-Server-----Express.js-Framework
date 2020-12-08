@@ -26,7 +26,7 @@ btn.addEventListener('click', (e) =>{
        view2.textContent = 'Loading!'
        view3.textContent = 'Loading!'
 
-fetch('http://localhost:3000/weather?address=' + slocation).then((response) => { 
+fetch('/weather?address=' + slocation).then((response) => { 
     response.json().then((data) => {
         if(data.error) 
             console.log(data.error)
