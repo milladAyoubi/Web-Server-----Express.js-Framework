@@ -1,7 +1,11 @@
 const request = require("request");
 const express = require('express')
+
+
 const path = require('path')
+    //Handlebars
 const hbs = require('hbs')
+    //Location Data and Weather
 const geoCode = require('./utils/geoCode')
 const forecast = require('./utils/forecast')
 
@@ -12,10 +16,10 @@ console.log(path.join(__dirname, '../public'))
 //Paths
 const partialPath = path.join(__dirname, '../handlebars/partials')
 const hbsPath = path.join(__dirname, '../handlebars/views')
-const publicDir = path.join(__dirname,'../public')
+const publicDir = path.join(__dirname, '../public')
 
 const app = express()
-const port = process.env.PORT || 3000 
+const port = process.env.PORT || 3000
 
 //Pointers to Views
 app.set('view engine', 'hbs')
@@ -24,8 +28,8 @@ hbs.registerPartials(partialPath)
 
 app.use(express.static(publicDir))
 
-
-app.get('',(req,res) => {
+//Default Webpage
+app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather App W/ Node.js!',
         subTitle: 'Millad Ayoubi',
@@ -34,40 +38,40 @@ app.get('',(req,res) => {
     })
 })
 
-app.get('/weather', (req,res) => {
-  
-    if(!req.query.address) { 
+app.get('/weather', (req, res) => {
+
+    if (!req.query.address) {
         return console.log('No Address Entered!')
     }
-  
-        
 
 
 
-geoCode(req.query.address, (error, {latitude, longitude,country} = {}) => {
-    if(error) {
-        return res.send({error})
-    }
 
-    forecast(latitude, longitude, (error, {data,time}) => {
-        if(error) {
-            return res.send({error})
+
+    geoCode(req.query.address, (error, { latitude, longitude, country } = {}) => {
+        if (error) {
+            return res.send({ error })
         }
 
-        res.send({
-            forcast: data,
-            LocationTime: time,
-            address: req.query.address,
-            latitude,
-            longitude,
-            country
+        forecast(latitude, longitude, (error, { data, time }) => {
+            if (error) {
+                return res.send({ error })
+            }
+
+            res.send({
+                forcast: data,
+                LocationTime: time,
+                address: req.query.address,
+                latitude,
+                longitude,
+                country
+            })
+
         })
-    
     })
-})
 
 })
-app.get('/about', (req,res) => {
+app.get('/about', (req, res) => {
     res.render('about', {
         title: 'Welcome to the About page!',
         subTitle: 'A demonstation of Handlebars in Express',
@@ -75,7 +79,7 @@ app.get('/about', (req,res) => {
     })
 })
 
-app.get('/about/*',(req,res) => {
+app.get('/about/*', (req, res) => {
 
     res.send('About Article Not Found')
 
@@ -83,8 +87,8 @@ app.get('/about/*',(req,res) => {
 })
 
 
-app.get('*',(req,res) => {
-res.send('404 Page Not Found')
+app.get('*', (req, res) => {
+    res.send('404 Page Not Found')
 })
 
 
@@ -92,6 +96,3 @@ res.send('404 Page Not Found')
 app.listen(port, () => {
     console.log('Server is up on port 3000')
 })
-
-
-

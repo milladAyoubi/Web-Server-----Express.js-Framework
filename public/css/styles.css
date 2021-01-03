@@ -1,83 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+body {
+    font-family: 'lato', sans-serif;
+}
+
 .topnav {
-  margin-bottom: 20px;
-  position: relative;
-  background-color: rgba(230, 230, 230, 0.28);
-  border-radius: 26px;
-  overflow: hidden;
-  text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: rgba(230, 230, 230, 0.28);
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: center;
 }
 
 .topnav a {
-  color: #393535;
-  text-align: center;
-  padding: 14px 16px;
-  font-size: 24px;
-  padding: 5%;
-  transition: 0.2s;
-  font-family: "Segoe UI Light";
+    color: #393535;
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 24px;
+    padding: 5%;
+    transition: 0.2s;
+    font-family: "Segoe UI Light";
 }
 
 .topnav a:hover {
-  color: #0275d8;
-  text-decoration: none;
-  transition: 0.2s;
+    color: #0275d8;
+    text-decoration: none;
+    transition: 0.2s;
 }
+
 .jumbotron {
-  background-image: url("https://i.pinimg.com/originals/04/ef/5e/04ef5e1743f2123165f573616c533885.jpg");
-  background-size: cover;
-  height: 66vh;
-  color: rebeccapurple;
-  text-align: center;
+    background-image: url("https://i.pinimg.com/originals/04/ef/5e/04ef5e1743f2123165f573616c533885.jpg");
+    background-size: cover;
+    height: 120vh;
+    color: rebeccapurple;
+    text-align: center;
 }
 
 .titlePage {
-  position: relative;
-  top: 100px;
+    position: relative;
+    top: 100px;
 }
 
 .formInput {
-  width: 400px;
-  padding: 10px;
-  border-radius: 30px;
-  border: none;
-
-  margin: auto;
+    width: 400px;
+    padding: 10px;
+    border-radius: 30px;
+    border: none;
+    margin: auto;
 }
 
 .btn {
-  font-size: 12px;
-  border-radius: 30px;
-  transition: 0.4s;
+    font-size: 12px;
+    border-radius: 30px;
+    transition: 0.4s;
 }
 
 .btn:hover {
-  background-color: transparent;
-  color: #0275d8;
-  transition: 0.4s;
+    background-color: transparent;
+    color: #0275d8;
+    transition: 0.4s;
 }
 
-.Info {
-  text-align: right;
-  font-family: cabin;
-  font-size: 22px;
-  background-color: #1a1a1a;
-  color: white;
-  padding-top: 60px;
-}
-
-.titleHead {
-  text-align: center;
-  margin-bottom: 3%;
-  color: rgb(61, 44, 251);
+.weatherInfo {
+    position: relative;
+    top: 200px;
 }
 
 .Service {
-  text-align: center;
-  width: 90%;
-  margin: auto;
-  color: rebeccapurple;
+    text-align: center;
+    color: white;
+}
 
-  background-color: rgba(230, 230, 230, 0.28);
-  border: 1px solid rgb(191, 191, 191);
-  border-radius: 30px;
+.card {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 6px 6px 6px 6px rgba(67, 67, 80, 0.2);
+}
+
+.bold {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
 }
